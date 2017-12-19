@@ -25,6 +25,7 @@ class PricesController extends FOSRestController
 
     public function __construct()
     {
+        var_dump("entramos");die;
         $this->wizzair = new \projectivemotion\WizzairScraper\Scraper();
         $this->wizzair->cacheOff();
         $this->wizzair->verboseOff();
@@ -98,7 +99,6 @@ class PricesController extends FOSRestController
             $this->wizzair->setReturnDate(date("Y-m-d H:i:s", $end));
             try {
                 $flights = $this->wizzair->getFlights($origin, $destination);
-                var_dump($flights);die;
                 //return json_encode($flights, JSON_PRETTY_PRINT);
                 $outboundPrice = $this->setPrice($flights, "outboundFlights");
 
