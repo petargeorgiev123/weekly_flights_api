@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Services\Scraper;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations as Rest;
@@ -69,7 +70,7 @@ class PricesController extends FOSRestController
      */
     public function getAction($origin, $destination, $outbound_date, $inbound_date, $weeks)
     {
-        set_time_limit(0);
+        set_time_limit(60);
 
         $this->origin = $origin;
         $this->destination = $destination;

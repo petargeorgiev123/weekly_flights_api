@@ -5,7 +5,7 @@
  * @author Amado Martinez <amado@projectivemotion.com>
  */
 
-namespace AppBundle\Controller;
+namespace AppBundle\Services;
 
 
 use projectivemotion\PhpScraperTools\CacheScraper;
