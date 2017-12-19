@@ -25,8 +25,9 @@ class PricesController extends FOSRestController
 
     public function __construct()
     {
-        var_dump("entramos");die;
+        var_dump("entramos");
         $this->wizzair = new \projectivemotion\WizzairScraper\Scraper();
+        var_dump("falla");die;
         $this->wizzair->cacheOff();
         $this->wizzair->verboseOff();
         $this->wizzair->setAdults(1);
