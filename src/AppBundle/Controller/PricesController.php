@@ -98,6 +98,7 @@ class PricesController extends FOSRestController
             $this->wizzair->setReturnDate(date("Y-m-d H:i:s", $end));
             try {
                 $flights = $this->wizzair->getFlights($origin, $destination);
+                var_dump($flights);die;
                 //return json_encode($flights, JSON_PRETTY_PRINT);
                 $outboundPrice = $this->setPrice($flights, "outboundFlights");
 
