@@ -97,9 +97,9 @@ class PricesController extends FOSRestController
                 echo "Detected api version: {$wizzair->getApiVersion()}\n";*/
             $this->wizzair->setDepartureDate(date("Y-m-d H:i:s", $start));
             $this->wizzair->setReturnDate(date("Y-m-d H:i:s", $end));
-            var_dump("falla");die;
             try {
                 $flights = $this->wizzair->getFlights($origin, $destination);
+                var_dump("falla");die;
                 //return json_encode($flights, JSON_PRETTY_PRINT);
                 $outboundPrice = $this->setPrice($flights, "outboundFlights");
 
