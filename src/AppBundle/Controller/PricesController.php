@@ -27,7 +27,6 @@ class PricesController extends FOSRestController
     {
         var_dump("entramos");
         $this->wizzair = new \projectivemotion\WizzairScraper\Scraper();
-        var_dump("falla");die;
         $this->wizzair->cacheOff();
         $this->wizzair->verboseOff();
         $this->wizzair->setAdults(1);
@@ -98,6 +97,7 @@ class PricesController extends FOSRestController
                 echo "Detected api version: {$wizzair->getApiVersion()}\n";*/
             $this->wizzair->setDepartureDate(date("Y-m-d H:i:s", $start));
             $this->wizzair->setReturnDate(date("Y-m-d H:i:s", $end));
+            var_dump("falla");die;
             try {
                 $flights = $this->wizzair->getFlights($origin, $destination);
                 //return json_encode($flights, JSON_PRETTY_PRINT);
