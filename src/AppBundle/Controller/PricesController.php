@@ -69,8 +69,8 @@ class PricesController extends FOSRestController
      */
     public function getAction($origin, $destination, $outbound_date, $inbound_date, $weeks)
     {
-        set_time_limit(30000000000000);
-        
+        set_time_limit(3);
+
         $this->origin = $origin;
         $this->destination = $destination;
         $this->outbound_date = $outbound_date;
