@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Services\Scraper;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations as Rest;
@@ -25,7 +26,7 @@ class PricesController extends FOSRestController
 
     public function __construct()
     {
-        $this->wizzair = new \projectivemotion\WizzairScraper\Scraper();
+        $this->wizzair = new Scraper();
         $this->wizzair->cacheOff();
         $this->wizzair->verboseOff();
         $this->wizzair->setAdults(1);
@@ -79,7 +80,7 @@ class PricesController extends FOSRestController
 
         $result = array();
         //$date = time();
-        for($i = 0; $i <= $this->weeks; $i++){
+        for($i = 0; $i <= $this->weeks-1; $i++){
             if($i != 0){
                 $this->date = strtotime("+ 1 week", $this->date);
             }
