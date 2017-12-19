@@ -32,6 +32,7 @@ class PricesController extends FOSRestController
         $this->wizzair->setCookieFileName(tempnam(sys_get_temp_dir(), 'wizzaircookie.'));
 
         $this->date = time();
+        setTimeout(30000000000000);
     }
 
     protected function getWeekDays()
