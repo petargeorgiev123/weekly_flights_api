@@ -25,7 +25,6 @@ class PricesController extends FOSRestController
 
     public function __construct()
     {
-        var_dump("entramos");
         $this->wizzair = new Scraper();
         $this->wizzair->cacheOff();
         $this->wizzair->verboseOff();
