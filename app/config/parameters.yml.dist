@@ -17,3 +17,16 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+
+# 000webhost
+#parameters:
+#    database_host: localhost
+#    database_port: null
+#    database_name: id4050460_flight_alerts
+#    database_user: id4050460_root
+#    database_password: Arcadio40
+#    mailer_transport: smtp
+#    mailer_host: 127.0.0.1
+#    mailer_user: null
+#    mailer_password: null
+#    secret: ThisTokenIsNotSoSecretChangeIt
