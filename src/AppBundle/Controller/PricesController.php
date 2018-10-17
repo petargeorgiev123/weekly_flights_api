@@ -66,10 +66,12 @@ class PricesController extends FOSRestController
     }
 
     /**
-     * @Rest\Get("/search/{origin}/{destination}/{outbound_date}/{inbound_date}/{weeks}")
+     * @Rest\Get("/search/{origin}/{destination}/{outbound_date}/{inbound_date}/{weeks}/{apiverssion}")
      */
-    public function getAction($origin, $destination, $outbound_date, $inbound_date, $weeks)
+    public function getAction($origin, $destination, $outbound_date, $inbound_date, $weeks, $apiverssion)
     {
+
+        $this->wizzair->setApiVersion($apiverssion);
         $this->origin = $origin;
         $this->destination = $destination;
         $this->outbound_date = $outbound_date;
